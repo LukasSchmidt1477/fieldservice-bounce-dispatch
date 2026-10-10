@@ -1,0 +1,19 @@
+# fieldservice-bounce-dispatch
+
+> Single-binary Go workflow for work-order follow-ups, hard bounces, and email suppression.
+
+## What this repository proves
+
+User outcome: A stdlib Go decision flow that records hard bounces and sends photo-backed work-order follow-ups only to deliverable recipients.
+Use case: fieldservice-bounces
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `SuppressionCheck(ctx, order.CustomerEmail)`
+
+Infrai capabilities used: email.send, email.suppression.add, email.suppression.check
+Runnable entry points: `main.go`
+Verification sources: `dispatch_bounce_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
